@@ -14,8 +14,8 @@ export async function getAppointments(): Promise<Appointment[]> {
   const openInterval = Interval.fromDateTimes(openTime, closeTime);
 
   return openInterval.splitBy({ minutes: 30 }).map((i) => ({
-    startTime: i.start.toLocaleString(DateTime.TIME_SIMPLE),
-    endTime: i.end.toLocaleString(DateTime.TIME_SIMPLE),
+    startTime: i.start.toISO(),
+    endTime: i.end.toISO(),
     length: i.length('minutes'),
   }));
 }

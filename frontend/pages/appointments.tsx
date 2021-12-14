@@ -1,3 +1,4 @@
+import { DateTime } from 'luxon';
 import { FC } from 'react';
 import styles from '../styles/Appointments.module.css';
 
@@ -19,7 +20,8 @@ const Appointments: FC<Props> = ({ appointments }) => {
       <div className={styles.appointments}>
         {appointments.map((appointment) => (
           <p key={appointment.startTime}>
-            {appointment.startTime} - {appointment.endTime}
+            {DateTime.fromISO(appointment.startTime).toFormat('hh:mm a')} -{' '}
+            {DateTime.fromISO(appointment.endTime).toFormat('hh:mm a')}
           </p>
         ))}
       </div>
