@@ -2,16 +2,16 @@
  * @jest-environment jsdom
  */
 
-import React from 'react';
 import { render, screen } from '@testing-library/react';
+import React from 'react';
 import Home from './index';
 
 describe('Home', () => {
-  it('renders a heading', () => {
+  it('renders our heading', () => {
     render(<Home />);
 
     const heading = screen.getByRole('heading', {
-      name: /welcome to next\.js!/i,
+      name: /Welcome to Brave Care/i,
     });
 
     expect(heading).toBeInTheDocument();
