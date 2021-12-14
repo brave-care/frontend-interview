@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import styles from '../styles/Appointments.module.css';
 
 interface Appointment {
@@ -6,17 +6,11 @@ interface Appointment {
   endTime: string;
 }
 
-const Appointments: FC = () => {
-  const [appointments, setAppointments] = useState<Appointment[]>([]);
-  async function fetchAppointments() {
-    const res = await fetch(`http://localhost:3001/appointments`);
-    setAppointments(await res.json());
-  }
+interface Props {
+  appointments: Appointment[];
+}
 
-  useEffect(() => {
-    fetchAppointments();
-  }, []);
-
+const Appointments: FC<Props> = ({ appointments }) => {
   return (
     <div className={styles.container}>
       <p className={styles.description}>
