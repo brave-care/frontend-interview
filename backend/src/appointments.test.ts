@@ -11,10 +11,6 @@ test('it returns appointments', async () => {
     startTime: '2021-02-02T10:00:00.000-08:00',
     endTime: '2021-02-02T10:30:00.000-08:00',
     length: 30,
-  });
-  expect(appointments[appointments.length - 1]).toEqual({
-    startTime: '2021-02-02T19:30:00.000-08:00',
-    endTime: '2021-02-02T20:00:00.000-08:00',
-    length: 30,
+    clinicId: '1',
   });
 });

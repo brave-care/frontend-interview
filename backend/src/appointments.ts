@@ -3,6 +3,8 @@ import { DateTime, Interval } from 'luxon';
 interface Appointment {
   startTime: string;
   endTime: string;
+  length: number;
+  clinicId: string;
 }
 
 export async function getAppointments(): Promise<Appointment[]> {
@@ -13,9 +15,23 @@ export async function getAppointments(): Promise<Appointment[]> {
   const closeTime = openTime.plus({ hours: 10 });
   const openInterval = Interval.fromDateTimes(openTime, closeTime);
 
-  return openInterval.splitBy({ minutes: 30 }).map((i) => ({
-    startTime: i.start.toISO(),
-    endTime: i.end.toISO(),
-    length: i.length('minutes'),
-  }));
+  const clinic1Appointments: Appointment[] = openInterval
+    .splitBy({ minutes: 30 })
+    .map((i) => ({
+      startTime: i.start.toISO(),
+      endTime: i.end.toISO(),
+      length: i.length('minutes'),
+      clinicId: '1',
+    }));
+
+  const clinic2Appointments: Appointment[] = openInterval
+    .splitBy({ minutes: 30 })
+    .map((i) => ({
+      startTime: i.start.toISO(),
+      endTime: i.end.toISO(),
+      length: i.length('minutes'),
+      clinicId: '2',
+    }));
+
+  return [...clinic1Appointments, ...clinic2Appointments];
 }
