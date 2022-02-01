@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 import { FC, Fragment } from 'react';
-import { TimeSlot } from '../components/TimeSlot';
-import styles from '../styles/Appointments.module.css';
+import styles from '../../styles/Appointments.module.css';
+import { TimeSlot } from '../TimeSlot';
 
 interface Appointment {
   clinicId: string;
@@ -14,7 +14,7 @@ interface Props {
   appointments: Appointment[];
 }
 
-const Appointments: FC<Props> = ({ appointments }) => {
+export const Appointments: FC<Props> = ({ appointments }) => {
   return (
     <Fragment>
       <p className={styles.description}>
@@ -37,5 +37,3 @@ const Appointments: FC<Props> = ({ appointments }) => {
     </Fragment>
   );
 };
-
-export default Appointments;

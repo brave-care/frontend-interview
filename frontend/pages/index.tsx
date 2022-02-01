@@ -1,6 +1,6 @@
 import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import { Appointments } from '../components/Appointments';
 import styles from '../styles/Home.module.css';
-import Appointments from './appointments';
 
 function Home({
   appointments,
