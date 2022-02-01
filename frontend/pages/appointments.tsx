@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon';
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
+import { TimeSlot } from '../components/TimeSlot';
 import styles from '../styles/Appointments.module.css';
 
 interface Appointment {
@@ -15,27 +16,25 @@ interface Props {
 
 const Appointments: FC<Props> = ({ appointments }) => {
   return (
-    <div>
+    <Fragment>
       <p className={styles.description}>
         We have some appointments available for you.
       </p>
       <div className={styles.appointments}>
         {appointments.map((appointment) => {
-          const formattedStartTime = DateTime.fromISO(
-            appointment.startTime
-          ).toFormat('hh:mm a');
-          const formattedEndTime = DateTime.fromISO(
-            appointment.endTime
-          ).toFormat('hh:mm a');
+          const { clinicId, startTime, endTime } = appointment;
+          const condensedTime = DateTime.fromISO(startTime).toFormat('HHmm');
 
           return (
-            <p key={`${appointment.clinicId}-${formattedStartTime}`}>
-              {formattedStartTime} - {formattedEndTime}
-            </p>
+            <TimeSlot
+              key={`${clinicId}-${condensedTime}`}
+              endTime={endTime}
+              startTime={startTime}
+            />
           );
         })}
       </div>
-    </div>
+    </Fragment>
   );
 };
 
