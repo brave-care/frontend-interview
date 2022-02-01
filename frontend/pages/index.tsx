@@ -1,5 +1,4 @@
 import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
-import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Appointments from './appointments';
 
@@ -7,17 +6,10 @@ function Home({
   appointments,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Welcome to Brave Care</title>
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to Brave Care</h1>
-
-        <Appointments appointments={appointments} />
-      </main>
-    </div>
+    <main className={styles.main}>
+      <h1 className={styles.title}>When do you want to visit?</h1>
+      <Appointments appointments={appointments} />
+    </main>
   );
 }
 
