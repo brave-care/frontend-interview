@@ -15,9 +15,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <title>Brave Care | Scheduling Example</title>
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
