@@ -23,7 +23,8 @@ export const Appointments: FC<Props> = ({ appointments }) => {
       <div className={styles.appointments}>
         {appointments.map((appointment) => {
           const { clinicId, startTime, endTime } = appointment;
-          const condensedTime = DateTime.fromISO(startTime).toFormat('HHmm');
+          const condensedTime =
+            DateTime.fromISO(startTime).toFormat('LLddHHmm');
 
           return (
             <TimeSlot
