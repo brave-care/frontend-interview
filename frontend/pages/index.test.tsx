@@ -4,14 +4,15 @@
 
 import { render, screen } from '@testing-library/react';
 import React from 'react';
+import { appointments } from '../__mocks__/appointments';
 import Home from './index';
 
 describe('Home', () => {
   it('renders our heading', () => {
-    render(<Home />);
+    render(<Home appointments={appointments} />);
 
     const heading = screen.getByRole('heading', {
-      name: /Welcome to Brave Care/i,
+      name: /When do you want to visit?/i,
     });
 
     expect(heading).toBeInTheDocument();
