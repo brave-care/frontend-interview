@@ -15,7 +15,7 @@ interface Props {
 
 const Appointments: FC<Props> = ({ appointments }) => {
   return (
-    <div className={styles.container}>
+    <div>
       <p className={styles.description}>
         We have some appointments available for you.
       </p>
