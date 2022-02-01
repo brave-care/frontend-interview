@@ -1,0 +1,8 @@
+.description {
+  margin: 1rem 0;
+}
+
+.appointments {
+  display: flex;
+  flex-direction: column;
+}
