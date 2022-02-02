@@ -30,13 +30,17 @@ yarn test --watch
 
 The project is set up with basic data fetching and rendering of a list of available appointment slots. We have a design from our design team for what they want the UI to look like. The design is here: [Figma file](https://www.figma.com/file/9sG5XUJdSJmgjBnP6EZgAj/Appointment-Booking?node-id=0%3A1)
 
+<img width="270" alt="screenshot" src="https://user-images.githubusercontent.com/7771178/152071697-72d6182e-ed50-4aab-86f0-45e481dcc905.png">
+
+
+
+
 1. Fetch available appointment slots from the backend, and display.
 2. Given clinics in different timezones, results should be in the relative timezone to the clinic.
 3. Allow the user to select a different clinic or day.
 4. Allow user to book an appointment.
 5. Bonus: handle users who leave the page open then come back to it.
 
-![screenshot](./screenshot.png)
 
 ## For the Backend folks
 
