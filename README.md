@@ -28,7 +28,7 @@ yarn test --watch
 
 ## For the Frontend folks
 
-The project is set up with basic data fetching and rendering of a list of available appointment slots. We have a design from our design team for what they want the UI to look like. The design is here: [Figma file](https://www.figma.com/file/xwlGzocFYohP1vci3Ik6lY/Untitled?node-id=0%3A1)
+The project is set up with basic data fetching and rendering of a list of available appointment slots. We have a design from our design team for what they want the UI to look like. The design is here: [Figma file](https://www.figma.com/file/9sG5XUJdSJmgjBnP6EZgAj/Appointment-Booking?node-id=0%3A1)
 
 1. Fetch available appointment slots from the backend, and display.
 2. Given clinics in different timezones, results should be in the relative timezone to the clinic.
@@ -40,12 +40,12 @@ The project is set up with basic data fetching and rendering of a list of availa
 
 ## For the Backend folks
 
-1. Given a set of Staff availble times and a set of booked appointments, generate a list of available appointment slots per clinic.
-2. Given clinics in different timezones, results should be in the relative timezone to the clinic.
-3. Prevent users from scheduling appointments within 5 minutes of the current time (since they couldn't actually get to the clinic in that time).
-4. Bonus: If two users start the booking process for the same timeslot, how do you handle the conflict.
+1. Set up an endpoint that will handle creating an appointment
+2. Generate a list of available appointment slots per clinic based on successfully created appointments
+3. Given clinics in different timezones, results should be in the relative timezone to the clinic.
+4. Prevent users from scheduling appointments within 5 minutes of the current time (since they couldn't actually get to the clinic in that time).
+5. Bonus: If two users start the booking process for the same timeslot, how do you handle the conflict.
 
 # The time
+
 Give yourself anywhere from 2-4 hours and complete whatever you can in that timeframe. Clone this repo, and put it into your own Github as a new private repo. Invite @kniedermaier when you're ready and we will review with our team and look forward to discussing it with you.
-
-

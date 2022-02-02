@@ -1,23 +1,22 @@
 import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
-import Head from 'next/head';
+import Head from 'next/Head';
+import { Fragment } from 'react';
+import { Appointments } from '../components/Appointments';
 import styles from '../styles/Home.module.css';
-import Appointments from './appointments';
 
 function Home({
   appointments,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <div className={styles.container}>
+    <Fragment>
       <Head>
-        <title>Welcome to Brave Care</title>
+        <title>Brave Care | Scheduling Example</title>
       </Head>
-
       <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to Brave Care</h1>
-
+        <h1 className={styles.title}>When do you want to visit?</h1>
         <Appointments appointments={appointments} />
       </main>
-    </div>
+    </Fragment>
   );
 }
 
