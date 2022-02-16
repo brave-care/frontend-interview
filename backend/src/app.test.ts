@@ -6,10 +6,8 @@ afterAll(() => {
 });
 
 test('it returns the health check', async () => {
-  await supertest(app)
-    .get('/health')
-    .expect(200)
-    .then((response) => {
-      expect(response.body.success).toBe(true);
-    });
+  const response = await supertest(app).get('/health');
+
+  expect(response.status).toEqual(200);
+  expect(response.body.success).toEqual(true);
 });
