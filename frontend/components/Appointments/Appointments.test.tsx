@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { Appointments } from '../Appointments';
 
-const appointments = [
+export const appointments = [
   {
     startTime: '2022-02-01T10:00:00.000-08:00',
     endTime: '2022-02-01T10:30:00.000-08:00',
