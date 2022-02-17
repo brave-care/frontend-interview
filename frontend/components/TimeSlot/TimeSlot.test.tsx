@@ -8,9 +8,7 @@ describe('TimeSlot', () => {
 
     render(<TimeSlot endTime={endTime} startTime={startTime} />);
 
-    const button = screen.getByRole('button', {
-      name: /10:00 AM - 10:30 AM/i,
-    });
+    const button = screen.getByRole('button');
 
     expect(button).toBeInTheDocument();
   });

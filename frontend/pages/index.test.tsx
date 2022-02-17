@@ -4,7 +4,7 @@
 
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { appointments } from '../__mocks__/appointments';
+import { appointments } from '../components/Appointments/Appointments.test';
 import Home from './index';
 
 describe('Home', () => {

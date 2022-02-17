@@ -1,8 +1,14 @@
 import { getAppointments } from './appointments';
 
-jest
-  .useFakeTimers()
-  .setSystemTime(new Date('2021-02-02T09:00:00.000').getTime());
+beforeEach(() => {
+  jest
+    .useFakeTimers()
+    .setSystemTime(new Date('2021-02-02T09:00:00.000').getTime());
+});
+
+afterEach(() => {
+  jest.useRealTimers();
+});
 
 test('it returns appointments', async () => {
   const appointments = await getAppointments();
